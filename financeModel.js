@@ -12,6 +12,11 @@ module.exports = {
 	async getData() {
 		console.log("Getting data from", url2);
 		return axios.get(url2);
-	}
+	},
+
+  async getPrice() {
+    console.log("Getting price of BRKB...");
+    return axios.get(url);
+  }
 
 }

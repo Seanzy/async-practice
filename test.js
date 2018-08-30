@@ -10,6 +10,10 @@ var finance = require('./financeModel.js'); //without ./ it looks in node module
 
 		const price2 = await finance.getData(); //this lines is equivalent to 
 		console.log(price2.data.optionChain.result[0].underlyingSymbol);
+
+    const price3 = await finance.getPrice();
+    console.log("BRKB bid:", price3.data.optionChain.result[0].quote.bid);
+    console.log("BRKB ask:", price3.data.optionChain.result[0].quote.ask);
 	}
 	catch (err) {
 		console.log(err);
@@ -29,7 +33,4 @@ finance.getBRKB().then((result) => {
 .catch(err => {
 
 }) 
-
-
-
 
