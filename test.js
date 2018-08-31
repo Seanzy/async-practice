@@ -14,6 +14,9 @@ var finance = require('./financeModel.js'); //without ./ it looks in node module
     const price3 = await finance.getPrice();
     console.log("BRKB bid:", price3.data.optionChain.result[0].quote.bid);
     console.log("BRKB ask:", price3.data.optionChain.result[0].quote.ask);
+
+    const options = await finance.getOptions();
+    console.log("BRKB options", options.data.optionChain.result[0].options)
 	}
 	catch (err) {
 		console.log(err);
